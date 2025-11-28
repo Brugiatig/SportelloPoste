@@ -7,7 +7,7 @@
  */
 public class GestoreArrivi implements Runnable {
 
-    /* variabili d'istanza sono;
+    /*  variabili d'istanza sono;
      * la risorsa condivisa listaClienti */
     private ListaClienti listaClienti;
     /* ms fra un arrivo e l'altro */

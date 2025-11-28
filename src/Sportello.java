@@ -34,7 +34,7 @@ public class Sportello implements Runnable {
             while (!Thread.interrupted()) {
                 Integer clienteServito = listaClienti.rimuoviCliente();
                 //tempo di servizio variabile nel range [1,4] secondi
-                int tempoServizio = (int) (Math.random() * (maxTempoServizio
+                 int tempoServizio = (int) (Math.random() * (maxTempoServizio
                         - minTempoServizio + 1) + minTempoServizio);
                 Thread.sleep(tempoServizio);
                 //Thread.sleep(1000); //tempo di servizio fisso

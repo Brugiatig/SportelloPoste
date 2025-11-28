@@ -1,4 +1,4 @@
-/**
+ /**
  * Classe con il main, che avvia l'app
  * che rappresenta il flusso dei clienti di un ufficio postale
  * messi in attesa da un totem elettronico che assegna

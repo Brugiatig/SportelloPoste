@@ -38,7 +38,6 @@ public class ListaClienti {
             listaNumeri.add(ultimoArrivo);
             System.out.println("Arrivo Cliente Numero \t " + ultimoArrivo + " (gestore: " + Thread.currentThread().getName() + ")");
             notifyAll();
-
             return ultimoArrivo;
         }
         return null;

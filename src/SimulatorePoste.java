@@ -11,8 +11,8 @@ public class SimulatorePoste {
         Thread arriviThread2 = new Thread(new GestoreArrivi(listaClienti), "Totem2");
 
         // Due sportelli
-        Thread sportelloThread1 = new Thread(new Sportello(listaClienti, "Marzia"));
-        Thread sportelloThread2 = new Thread(new Sportello(listaClienti, "Cinzia"));
+        Thread sportelloThread1 = new Thread(new Sportello(listaClienti, "Giulio"));
+        Thread sportelloThread2 = new Thread(new Sportello(listaClienti, "Lorenzo"));
 
         // Avvio thread
         arriviThread1.start();

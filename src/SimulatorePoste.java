@@ -1,20 +1,19 @@
-// SimulatorePoste.java
 /**
- * Classe main per simulare l'ufficio postale con 2 gestori arrivi
+ * Classe con il main, che avvia l'app
+ * che rappresenta il flusso dei clienti di un ufficio postale
+ * messi in attesa da un totem elettronico che assegna
+ * un numero progressivo e stampa il ticket.
+ * Clienti gestiti da un solo sportello
+ * @author frida
+ * @version 1.0
  */
 public class SimulatorePoste {
     public static void main(String[] args) {
         ListaClienti listaClienti = new ListaClienti();
-
-        // Due gestori arrivi
-        Thread arriviThread1 = new Thread(new GestoreArrivi(listaClienti), "Totem1");
-        Thread arriviThread2 = new Thread(new GestoreArrivi(listaClienti), "Totem2");
-
-        // Due sportelli
-        Thread sportelloThread1 = new Thread(new Sportello(listaClienti, "Giulio"));
-        Thread sportelloThread2 = new Thread(new Sportello(listaClienti, "Lorenzo"));
-
-        // Avvio thread
+        Thread arriviThread1 = new Thread(new GestoreArrivi(listaClienti));
+        Thread arriviThread2 = new Thread(new GestoreArrivi(listaClienti));
+        Thread sportelloThread1 = new Thread(new Sportello(listaClienti, "1"));
+        Thread sportelloThread2 = new Thread(new Sportello(listaClienti, "2"));
         arriviThread1.start();
         arriviThread2.start();
         sportelloThread1.start();

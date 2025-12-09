@@ -12,6 +12,7 @@ public class ListaClienti {
     private int ultimoArrivo;
     private int ultimoServito;
     private final int numeroMassimo = 6;
+    private final int capacitaMassima = 5;
     /**
      * constructor
      * settaggio delle variabili di istanza
@@ -60,11 +61,15 @@ public class ListaClienti {
      * e inserisce tale nuovo numero / ticket nella lista numeri
      * @return Integer: ultimoArrivo o null se gli arrivi saturano
      */
-    public synchronized Integer addCliente(){
+    public synchronized Integer addCliente() throws InterruptedException {
+        while((ultimoArrivo - ultimoServito) >= capacitaMassima){
+            System.out.println("Cliente in attesa di entrare");
+            wait();
+        }
         if (ultimoArrivo < numeroMassimo) {
             ultimoArrivo++;
             listaNumeri.add(ultimoArrivo);
-            notify();
+            notifyAll();
             return ultimoArrivo;
         }
         return null;
